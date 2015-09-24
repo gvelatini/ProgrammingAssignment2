@@ -1,13 +1,12 @@
 ## The following two functions create a matrix that has an inverse, calculates the inverse matrix, 
-## and caches the inverse matrix so that the inverse does not hyave to be computed ecah time it is needed.
-
-# The operators <<- and ->> are normally only used in functions, 
-# and cause a search to be made through parent environments for an existing 
-# definition of the variable being assigned. If such a variable is found 
-# (and its binding is not locked) then its value is redefined, otherwise 
-# assignment takes place in the global environment.
-
-## The function makeCacheMatrix  creates a special "matrix" object that can cache its inverse.
+## and caches the inverse matrix so that the inverse does not have to be computed ecah time it is needed.
+##
+## The function makeCacheMatrix  creates a special "matrix" object that can cache its inverse. 
+## The object cretaed by makeCacheMatrix contains## 4 functions. 
+## "$set()" sets the input matrix values, 
+## "$get()" retrieves the input matrix values, 
+## "$setinv()" sets the inverse matrix values, 
+## "$getinv()" retrieves the inverse matrix values, 
 
 makeCacheMatrix <- function(x = matrix()) {
 
