@@ -1,8 +1,8 @@
-## The following two functions create a matrix that has an inverse, calculates the inverse matrix, 
-## and caches the inverse matrix so that the inverse does not have to be computed ecah time it is needed.
+## The following two functions create a matrix object for a matrix that has an inverse.  They calculate the inverse matrix, 
+## and cache the inverse matrix so that the inverse does not have to be computed ecah time it is needed.
 ##
 ## The function makeCacheMatrix  creates a special "matrix" object that can cache its inverse. 
-## The object cretaed by makeCacheMatrix contains## 4 functions. 
+## The object created by makeCacheMatrix contains 4 functions: 
 ## "$set()" sets the input matrix values, 
 ## "$get()" retrieves the input matrix values, 
 ## "$setinv()" sets the inverse matrix values, 
@@ -26,8 +26,11 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## The function cacheSolve computes the inverse of the 
-## special "matrix" returned by makeCacheMatrix above.
+## The function cacheSolve checks to see if an inverse matrix
+## has already been cached.   If it has alreday been cached, it 
+## simply returns the cached inverse matrix. If not, it computes 
+## the inverse of the matrix returned by makeCacheMatrix 
+## above and caches the new inverse.
 
 cacheSolve <- function(x, ...) {
        
